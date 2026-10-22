@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream-200 text-burgundy-950 font-sans;
+    overflow-x: hidden;
+  }
+
+  /* Custom Luxury Gold Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1A0509;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #A8803F 0%, #C9A66B 50%, #8A672E 100%);
+    border-radius: 4px;
+    border: 1px solid rgba(230, 211, 163, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E6D3A3;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: #C9A66B;
+    color: #1A0509;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for clean carousels */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Gold Shimmer Text Effect */
+  .text-shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      #C9A66B 0%,
+      #F4ECE0 25%,
+      #E6D3A3 50%,
+      #C9A66B 75%,
+      #A8803F 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
