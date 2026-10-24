@@ -68,7 +68,7 @@ export function HeroSection() {
       id="home"
       className="
         relative isolate
-        flex min-h-[600px]
+        flex min-h-[560px]
         w-full items-center
         overflow-hidden
         bg-[#FFF8EE]
@@ -137,10 +137,10 @@ export function HeroSection() {
           relative z-10
           mx-auto w-full
           max-w-[1600px]
-          px-5
-          py-20
+          px-4
+          py-12
           sm:px-8
-          sm:py-24
+          sm:py-20
           md:px-12
           lg:px-16
           lg:py-20
@@ -151,7 +151,7 @@ export function HeroSection() {
           className="
             grid grid-cols-1
             items-center
-            gap-8
+            gap-6
             lg:grid-cols-12
             lg:gap-5
           "
@@ -174,7 +174,7 @@ export function HeroSection() {
             <motion.div
               {...reveal(0.1)}
               className="
-                mb-5
+                mb-3
                 font-sans
                 text-xs
                 font-bold
@@ -197,7 +197,7 @@ export function HeroSection() {
               className="
                 max-w-[720px]
                 font-serif
-                text-[clamp(2.55rem,4.9vw,5rem)]
+                text-[clamp(2.15rem,8.2vw,5rem)]
                 font-bold
                 leading-[1.02]
                 tracking-[-0.045em]
@@ -231,11 +231,11 @@ export function HeroSection() {
             <motion.p
               {...reveal(0.35)}
               className="
-                mt-5
+                mt-4
                 max-w-[560px]
                 font-sans
-                text-[15px]
-                leading-[1.7]
+                text-sm
+                leading-[1.65]
                 text-[#514747]
                 sm:mt-6
                 sm:text-base
@@ -254,14 +254,14 @@ export function HeroSection() {
             <motion.div
               {...reveal(0.5)}
               className="
-                mt-7
-                flex flex-col
-                items-start
-                gap-4
+                mt-5
+                flex flex-row flex-wrap
+                items-center
+                gap-3
                 sm:mt-8
                 sm:flex-row
                 sm:items-center
-                sm:gap-8
+                sm:gap-6
               "
             >
  {/* GET A QUOTE */}
@@ -270,17 +270,17 @@ export function HeroSection() {
   href="/contact"
   className="
     inline-flex
-    min-h-[56px]
-    w-full
+    min-h-[44px]
+    w-auto
     items-center
     justify-center
-    gap-3
+    gap-2
     rounded-full
     border-0
     bg-[#671c29]
-    px-8
+    px-5
     font-sans
-    text-[15px]
+    text-sm
     font-semibold
     text-white
     shadow-none
@@ -290,8 +290,11 @@ export function HeroSection() {
     hover:shadow-none
     focus:bg-[#671c29]
     active:bg-[#671c29]
+    sm:min-h-[50px]
+    sm:px-7
+    sm:text-[15px]
     sm:w-auto
-    sm:min-w-[235px]
+    sm:min-w-[200px]
   "
 >
   <span>Get a Quote</span>
@@ -323,7 +326,7 @@ export function HeroSection() {
               >
                 <span
                   className="
-                    flex h-12 w-12
+                    flex h-10 w-10
                     shrink-0
                     items-center
                     justify-center
@@ -353,8 +356,8 @@ export function HeroSection() {
             <motion.div
               {...reveal(0.7)}
               className="
-                mt-8 grid grid-cols-1 gap-3
-                border-t border-[#5A1020]/20 pt-5
+                mt-6 grid grid-cols-3 gap-2
+                border-t border-[#5A1020]/20 pt-4
                 sm:mt-10 sm:grid-cols-3 sm:gap-4 sm:pt-6
                 lg:max-w-[690px]
               "
@@ -366,20 +369,20 @@ export function HeroSection() {
                   <div
                     key={feature.title}
                     className="
-                      group flex min-w-0 items-center gap-3
-                      rounded-2xl border border-[#5A1020]/10
-                      bg-[#FFF9F0]/85 px-3 py-3
+                      group flex min-w-0 flex-col items-start gap-2
+                      rounded-xl border border-[#5A1020]/10
+                      bg-[#FFF9F0]/85 px-2 py-2.5
                       shadow-[0_6px_22px_rgba(59,10,18,0.07)]
                       backdrop-blur-sm
                       transition-all duration-300
                       hover:-translate-y-1 hover:border-[#8B1730]/30
                       hover:bg-white hover:shadow-[0_12px_28px_rgba(59,10,18,0.13)]
-                      sm:gap-3 sm:px-3 sm:py-4
+                      sm:flex-row sm:gap-3 sm:px-3 sm:py-4
                     "
                   >
                     <span
                       className="
-                        flex h-11 w-11 shrink-0 items-center justify-center
+                        flex h-8 w-8 shrink-0 items-center justify-center
                         rounded-xl border border-[#8B1730]/15
                         bg-gradient-to-br from-[#671c29] to-[#3B0A12]
                         text-[#F8E7C5]
@@ -389,13 +392,13 @@ export function HeroSection() {
                         sm:h-12 sm:w-12
                       "
                     >
-                      <Icon className="h-6 w-6" strokeWidth={2} />
+                      <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={2} />
                     </span>
 
                     <div className="min-w-0">
                       <p
                         className="
-                          font-serif text-sm font-bold leading-tight
+                          font-serif text-[11px] font-bold leading-tight
                           tracking-[0.01em] text-[#3B0A12]
                           sm:text-[15px] md:text-base
                         "
@@ -405,7 +408,7 @@ export function HeroSection() {
 
                       <p
                         className="
-                          mt-1 font-sans text-xs font-medium leading-tight
+                          mt-1 font-sans text-[10px] font-medium leading-tight
                           text-[#5B2630] sm:text-sm
                         "
                       >

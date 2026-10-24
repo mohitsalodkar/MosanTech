@@ -74,13 +74,14 @@ function ProjectCard({ project, index, reducedMotion }) {
         {/* Category Badge */}
         <span
           className="
-            absolute left-3 top-3
+            absolute left-2.5 top-2.5
+            max-w-[calc(100%-1.25rem)] truncate
             rounded-full border border-white/80
-            bg-[#FFF9F0] px-3 py-1.5
+            bg-[#FFF9F0] px-2.5 py-1
             font-['Montserrat',sans-serif]
-            text-[9px] font-semibold uppercase
-            tracking-[1.3px] text-[#790D26]
-            sm:left-4 sm:top-4 sm:text-[10px]
+            text-[8px] font-semibold uppercase
+            tracking-[1px] text-[#790D26]
+            sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px]
           "
         >
           {project.category}
@@ -88,11 +89,11 @@ function ProjectCard({ project, index, reducedMotion }) {
       </div>
 
       {/* Project Information */}
-      <div className="flex flex-1 flex-col p-4 sm:p-5">
+      <div className="flex flex-1 flex-col p-3.5 sm:p-5">
         <h3
           className="
-            font-['Plus_Jakarta_Sans',sans-serif]
-            text-[14px] font-bold leading-snug
+            font-['Montserrat',sans-serif]
+            text-[13px] font-bold leading-snug
             text-[#54101D]
             sm:text-base
           "
@@ -102,52 +103,54 @@ function ProjectCard({ project, index, reducedMotion }) {
 
         <p
           className="
-            mt-1.5 min-h-[38px]
-            text-[12px] leading-[1.7]
+            mt-1.5 min-h-[34px]
+            text-[11px] leading-[1.65]
             text-[#76635B]
-            sm:text-[13px]
+            sm:min-h-[38px] sm:text-[13px] sm:leading-[1.7]
           "
         >
           {project.description}
         </p>
 
         {/* Live Demo Button */}
-        <div className="mt-auto pt-4">
+        <div className="mt-auto pt-3 sm:pt-4">
           {project.liveUrl ? (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="
-                inline-flex min-h-[40px] items-center
-                justify-center gap-2 rounded-full
+                inline-flex min-h-[34px] items-center
+                justify-center gap-1.5 rounded-full
                 border border-[#8D3545]
-                px-5 py-2
-                text-[12px] font-bold
+                px-3.5 py-1.5
+                text-[11px] font-bold
                 text-[#790D26]
                 transition-all duration-300
                 hover:bg-[#790D26] hover:text-white
                 focus-visible:outline-none
                 focus-visible:ring-2
                 focus-visible:ring-[#C7A15A]
+                sm:min-h-[40px] sm:gap-2 sm:px-5 sm:py-2 sm:text-[12px]
               "
             >
               Live Demo
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </a>
           ) : (
             <span
               className="
-                inline-flex min-h-[40px] items-center
-                justify-center gap-2 rounded-full
+                inline-flex min-h-[34px] items-center
+                justify-center gap-1.5 rounded-full
                 border border-[#8D3545]
-                px-5 py-2
-                text-[12px] font-bold
+                px-3.5 py-1.5
+                text-[11px] font-bold
                 text-[#790D26]
+                sm:min-h-[40px] sm:gap-2 sm:px-5 sm:py-2 sm:text-[12px]
               "
             >
               Live Demo
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </span>
           )}
         </div>
@@ -165,7 +168,7 @@ export function PortfolioGridSection() {
       className="
         relative isolate overflow-hidden
         bg-[#FFF9F0] text-[#351016]
-        py-12 sm:py-14 lg:py-[72px]
+        py-10 sm:py-14 lg:py-[72px]
       "
     >
       {/* Subtle Background Glow */}
@@ -187,8 +190,7 @@ export function PortfolioGridSection() {
         "
       />
 
-      <div className="mx-auto w-full max-w-[1500px] px-5 sm:px-8 lg:px-12 xl:px-14">
-
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-8 lg:px-12 xl:px-14">
         {/* Section Heading */}
         <motion.header
           initial={reducedMotion ? false : { opacity: 0, y: 15 }}
@@ -196,18 +198,18 @@ export function PortfolioGridSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45 }}
           className="
-            mb-7 flex flex-col items-start
-            justify-between gap-5
-            sm:mb-8 sm:flex-row sm:items-end
+            mb-6 flex flex-col items-start
+            justify-between gap-4
+            sm:mb-8 sm:flex-row sm:items-end sm:gap-5
           "
         >
           <div>
             <p
               className="
                 mb-2 font-['Montserrat',sans-serif]
-                text-[10px] font-bold uppercase
-                tracking-[3px] text-[#8A1830]
-                sm:text-[11px]
+                text-[9px] font-bold uppercase
+                tracking-[2.5px] text-[#8A1830]
+                sm:text-[11px] sm:tracking-[3px]
               "
             >
               Our Recent Work
@@ -215,9 +217,9 @@ export function PortfolioGridSection() {
 
             <h2
               className="
-                font-['Georgia',serif]
-                text-[29px] font-bold
-                leading-[1.15] tracking-[-0.7px]
+                font-['Bodoni_Moda',serif]
+                text-[clamp(1.65rem,7vw,2.4rem)] font-bold
+                leading-[1.15] tracking-[-0.6px]
                 text-[#2A1010]
                 sm:text-3xl md:text-[38px]
                 lg:text-[42px]
@@ -231,30 +233,30 @@ export function PortfolioGridSection() {
           <a
             href="/#our-work"
             className="
-              inline-flex shrink-0 items-center
-              justify-center gap-2.5
+              inline-flex min-h-[36px] shrink-0 items-center
+              justify-center gap-2
               rounded-full border border-[#8D3545]
-              px-5 py-2.5
-              text-[12px] font-bold
+              px-4 py-2
+              text-[11px] font-bold
               text-[#790D26]
               transition-all duration-300
               hover:bg-[#790D26] hover:text-white
               focus-visible:outline-none
               focus-visible:ring-2
               focus-visible:ring-[#C7A15A]
-              sm:text-[13px]
+              sm:min-h-[40px] sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-[13px]
             "
           >
             View All Projects
-            <ArrowRight size={16} />
+            <ArrowRight size={14} />
           </a>
         </motion.header>
 
         {/* Responsive Project Grid */}
         <div
           className="
-            grid grid-cols-1 items-stretch gap-5
-            sm:grid-cols-2
+            grid grid-cols-2 items-stretch gap-3
+            sm:grid-cols-2 sm:gap-5
             lg:grid-cols-4 lg:gap-5
             xl:gap-6
           "
@@ -268,7 +270,6 @@ export function PortfolioGridSection() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

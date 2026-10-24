@@ -71,7 +71,7 @@ function ProcessStep({ step, index, reducedMotion }) {
         items-center rounded-2xl
         border border-[#D8B86B]/15
         bg-white/[0.025]
-        px-3 py-5 text-center
+        px-2.5 py-4 text-center
         transition-all duration-300
         hover:border-[#D8B86B]/45
         hover:bg-white/[0.055]
@@ -97,7 +97,7 @@ function ProcessStep({ step, index, reducedMotion }) {
       {/* Icon */}
       <div
         className="
-          relative mb-5 flex h-[66px] w-[66px]
+          relative mb-4 flex h-[54px] w-[54px]
           shrink-0 items-center justify-center
           rounded-full border border-[#D8B86B]/70
           bg-gradient-to-br from-[#6B1022] to-[#26040E]
@@ -112,7 +112,7 @@ function ProcessStep({ step, index, reducedMotion }) {
       >
         <Icon
           className="
-            h-7 w-7 transition-transform duration-500
+            h-6 w-6 transition-transform duration-500
             group-hover:scale-110
             sm:h-8 sm:w-8
           "
@@ -136,7 +136,7 @@ function ProcessStep({ step, index, reducedMotion }) {
       <h3
         className="
           font-['Montserrat',sans-serif]
-          text-[13px] font-bold leading-[1.45]
+          text-[12px] font-bold leading-[1.45]
           text-[#FFF9F0]
           sm:text-[15px]
           lg:text-base
@@ -154,9 +154,9 @@ function ProcessStep({ step, index, reducedMotion }) {
       {/* Description */}
       <p
         className="
-          mx-auto mt-3 max-w-[260px]
+          mx-auto mt-2.5 max-w-[260px]
           font-['Montserrat',sans-serif]
-          text-[10px] leading-[1.8]
+          text-[10px] leading-[1.7]
           text-[#F1DDE0]/75
           transition-colors duration-300
           group-hover:text-[#FFF9F0]/90
@@ -198,7 +198,7 @@ export function ProcessTimelineSection() {
       id="our-process"
       className="
         relative isolate overflow-hidden
-        bg-[#390711] py-12
+        bg-[#390711] py-10
         text-[#FFF9F0]
         sm:py-16
         lg:py-[76px]
@@ -260,7 +260,7 @@ export function ProcessTimelineSection() {
       <div
         className="
           mx-auto w-full max-w-[1320px]
-          px-5 sm:px-8 lg:px-12
+          px-4 sm:px-8 lg:px-12
         "
       >
         {/* Section heading */}
@@ -279,7 +279,7 @@ export function ProcessTimelineSection() {
             amount: 0.2,
           }}
           transition={{ duration: 0.45 }}
-          className="mb-8 sm:mb-10 lg:mb-12"
+          className="mb-6 sm:mb-10 lg:mb-12"
         >
           <p
             className="
@@ -296,7 +296,7 @@ export function ProcessTimelineSection() {
             className="
               max-w-4xl
               font-['Bodoni_Moda',serif]
-              text-[clamp(2rem,3.4vw,3rem)]
+              text-[clamp(1.8rem,7vw,3rem)]
               font-semibold leading-[1.12]
               tracking-[-0.025em]
               text-[#FFF9F0]
@@ -309,7 +309,7 @@ export function ProcessTimelineSection() {
           <div
             aria-hidden="true"
             className="
-              mt-5 h-[2px] w-16
+              mt-4 h-[2px] w-14
               rounded-full
               bg-gradient-to-r
               from-[#D8B86B] to-transparent
@@ -334,14 +334,35 @@ export function ProcessTimelineSection() {
             "
           />
 
-          <div
-            className="
-              grid grid-cols-1 gap-4
-              sm:grid-cols-2 sm:gap-5
-              lg:grid-cols-4 lg:gap-4
-              xl:gap-5
-            "
-          >
+          {/* Mobile: continuously looping process cards */}
+          <div className="overflow-hidden sm:hidden">
+            <motion.div
+              className="flex w-max gap-3"
+              animate={reducedMotion ? undefined : { x: ['0%', '-50%'] }}
+              transition={
+                reducedMotion
+                  ? undefined
+                  : { duration: 24, ease: 'linear', repeat: Infinity }
+              }
+              style={reducedMotion ? undefined : { willChange: 'transform' }}
+            >
+              {[...processSteps, ...processSteps].map((step, index) => (
+                <div
+                  key={`${step.number}-${index}`}
+                  className="w-[72vw] max-w-[280px] shrink-0"
+                >
+                  <ProcessStep
+                    step={step}
+                    index={index % processSteps.length}
+                    reducedMotion={reducedMotion}
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Tablet and desktop: complete grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-4 xl:gap-5">
             {processSteps.map((step, index) => (
               <ProcessStep
                 key={step.number}
@@ -373,7 +394,7 @@ export function ProcessTimelineSection() {
             delay: 0.1,
           }}
           className="
-            relative mt-8 overflow-hidden
+            relative mt-6 overflow-hidden
             rounded-[18px]
             border border-[#D8B86B]/35
             bg-gradient-to-br
@@ -399,9 +420,9 @@ export function ProcessTimelineSection() {
                 key={stat.label}
                 className={`
                   relative flex min-w-0
-                  min-h-[100px] flex-col
+                  min-h-[88px] flex-col
                   items-center justify-center
-                  px-1.5 py-4 text-center
+                  px-1 py-3 text-center
                   transition-colors duration-300
                   hover:bg-[#C7A15A]/[0.06]
                   sm:min-h-[120px] sm:px-4 sm:py-5
@@ -415,7 +436,7 @@ export function ProcessTimelineSection() {
                 <span
                   className="
                     font-['Bodoni_Moda',serif]
-                    text-[clamp(1.3rem,3vw,2.5rem)]
+                    text-[clamp(1.15rem,5vw,2.5rem)]
                     font-semibold leading-none
                     tracking-[-0.025em]
                     text-[#671C29]
@@ -428,7 +449,7 @@ export function ProcessTimelineSection() {
                   className="
                     mt-2 max-w-full
                     font-['Montserrat',sans-serif]
-                    text-[9px] font-semibold
+                    text-[8px] font-semibold
                     leading-snug text-[#5F4945]
                     sm:mt-2.5 sm:text-xs
                     md:text-sm
@@ -441,7 +462,7 @@ export function ProcessTimelineSection() {
                 <span
                   aria-hidden="true"
                   className="
-                    mt-2.5 h-[2px] w-5
+                    mt-2 h-[2px] w-4
                     rounded-full bg-[#C7A15A]/70
                     sm:mt-3 sm:w-7
                   "

@@ -48,9 +48,9 @@ function TestimonialCard({ testimonial, index, reducedMotion }) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.38, delay: index * 0.06 }}
       className="
-        group relative flex h-full min-h-[260px] flex-col overflow-hidden
+        group relative flex h-full min-h-[230px] flex-col overflow-hidden
         rounded-[20px] border border-[#F0E0CC] bg-[#FFFCF7]
-        p-5 shadow-[0_8px_24px_rgba(53,16,22,0.07)]
+        p-4 shadow-[0_8px_24px_rgba(53,16,22,0.07)]
         transition-all duration-300
         hover:-translate-y-1 hover:border-[#D9BFA0]
         hover:shadow-[0_16px_34px_rgba(53,16,22,0.12)]
@@ -62,7 +62,7 @@ function TestimonialCard({ testimonial, index, reducedMotion }) {
         aria-hidden="true"
         className="pointer-events-none absolute -right-2 -top-4 text-[#671C29]/[0.055]"
       >
-        <Quote className="h-24 w-24 fill-current" strokeWidth={0.6} />
+        <Quote className="h-20 w-20 fill-current sm:h-24 sm:w-24" strokeWidth={0.6} />
       </div>
 
       <div className="relative z-10 flex items-center justify-between">
@@ -70,25 +70,25 @@ function TestimonialCard({ testimonial, index, reducedMotion }) {
           {Array.from({ length: 5 }).map((_, starIndex) => (
             <Star
               key={starIndex}
-              className="h-[15px] w-[15px] fill-[#C7A15A] text-[#C7A15A]"
+              className="h-3.5 w-3.5 fill-[#C7A15A] text-[#C7A15A] sm:h-[15px] sm:w-[15px]"
               strokeWidth={1.4}
             />
           ))}
         </div>
-        <span className="rounded-full border border-[#E8D7C4] bg-[#FFF9F0] px-2.5 py-1 font-['Montserrat',sans-serif] text-[9px] font-bold uppercase tracking-[0.13em] text-[#671C29]">
+        <span className="rounded-full border border-[#E8D7C4] bg-[#FFF9F0] px-2 py-1 font-['Montserrat',sans-serif] text-[8px] sm:px-2.5 sm:text-[9px] font-bold uppercase tracking-[0.13em] text-[#671C29]">
           Client review
         </span>
       </div>
 
-      <p className="relative z-10 mt-5 flex-1 font-['Montserrat',sans-serif] text-[12px] leading-[1.8] text-[#514541] sm:text-[13px]">
+      <p className="relative z-10 mt-4 flex-1 font-['Montserrat',sans-serif] text-[12px] leading-[1.7] text-[#514541] sm:mt-5 sm:text-[13px] sm:leading-[1.8]">
         “{testimonial.quote}”
       </p>
 
-      <div className="relative z-10 mt-5 flex items-center gap-3 border-t border-[#EADBC9] pt-4">
+      <div className="relative z-10 mt-4 flex items-center gap-2.5 border-t border-[#EADBC9] pt-4">
         <div
           aria-hidden="true"
           className="
-            flex h-11 w-11 shrink-0 items-center justify-center rounded-full
+            flex h-10 w-10 shrink-0 items-center justify-center rounded-full
             border border-[#D8B86B]/70 bg-gradient-to-br from-[#F5E7D5] to-[#E6CDAF]
             font-['Montserrat',sans-serif] text-xs font-extrabold text-[#671C29]
             shadow-[0_3px_10px_rgba(103,28,41,0.08)]
@@ -154,7 +154,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative isolate overflow-hidden bg-[#FFF9F0] py-12 text-[#351016] sm:py-16 lg:py-[76px]"
+      className="relative isolate overflow-hidden bg-[#FFF9F0] py-10 text-[#351016] sm:py-16 lg:py-[76px]"
     >
       {/* Soft ivory background decoration */}
       <div
@@ -166,23 +166,23 @@ export function TestimonialsSection() {
         className="pointer-events-none absolute -right-24 bottom-0 -z-10 h-72 w-72 rounded-full bg-[#671C29]/[0.045] blur-[100px]"
       />
 
-      <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-8 lg:px-12">
         <motion.header
           initial={reducedMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.4 }}
-          className="mb-7 text-center sm:mb-9 lg:mb-10"
+          className="mb-6 text-center sm:mb-9 lg:mb-10"
         >
           <p className="mb-2 font-['Montserrat',sans-serif] text-[10px] font-bold uppercase tracking-[0.28em] text-[#671C29] sm:text-[11px] sm:tracking-[0.32em]">
             Client Testimonials
           </p>
 
-          <h2 className="font-['Bodoni_Moda',serif] text-[clamp(2rem,3.2vw,2.8rem)] font-semibold leading-[1.12] tracking-[-0.025em] text-[#2B1117]">
+          <h2 className="font-['Bodoni_Moda',serif] text-[clamp(1.8rem,7vw,2.8rem)] font-semibold leading-[1.12] tracking-[-0.025em] text-[#2B1117]">
             What Our Clients Say
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl font-['Montserrat',sans-serif] text-xs leading-6 text-[#76635B] sm:text-sm">
+          <p className="mx-auto mt-3 max-w-xl font-['Montserrat',sans-serif] text-[11px] leading-5 sm:text-xs sm:leading-6 text-[#76635B] sm:text-sm">
             Kind words from people we’ve had the pleasure of working with.
           </p>
 
@@ -206,7 +206,7 @@ export function TestimonialsSection() {
             <ChevronLeft className="h-5 w-5" />
           </button>
 
-          <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
             {visibleTestimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={`${testimonial.name}-${activeIndex}`}
@@ -234,7 +234,7 @@ export function TestimonialsSection() {
           </button>
         </div>
 
-        <div className="mt-5 flex items-center justify-center gap-3 sm:hidden">
+        <div className="mt-4 flex items-center justify-center gap-3 sm:hidden">
           <button
             type="button"
             onClick={previous}
